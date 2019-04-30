@@ -1,40 +1,42 @@
-angular.module('example', ['angularCharts']);
 
-function MainController($scope) {
-	$scope.data1 = {
-		series: ['Sales', 'Income', '<i>Expense</i>', 'Laptops', 'Keyboards'],
-		data: [{
-			x: "Sales",
-			y: [100, 500, 0],
-			tooltip: "this is tooltip"
-		}, {
-			x: "Not Sales",
-			y: [300, 100, 100]
-		}, {
-			x: "Tax",
-			y: [351]
-		}, {
-			x: "Not Tax",
-			y: [54, 0, 879]
-		}]
-	};
+angular.module('plunker', ['angularCharts']);
 
-	$scope.data2 = {
-		series: ['<em>500</em> Keyboards', '<em>105</em> Laptops', '<em>100</em> TVs'],
-		data: [{
-			x: "Sales",
-			y: [100, 500, 0],
-			tooltip: "this is tooltip"
-		}, {
-			x: "Income",
-			y: [300, 100, 100]
-		}, {
-			x: "Expense",
-			y: [351, 50, 25]
-		}]
-	}
+function MainCtrl($scope) {
+$scope.config = {
+title: 'Products',
+tooltips: true,
+labels: false,
+mouseover: function() {},
+mouseout: function() {},
+click: function() {},
+legend: {
+display: false,
+//could be 'left, right'
+position: 'right'
+},
+height:100,
+width:100
+};
 
-	$scope.chartType = 'bar';
+$scope.data = {
+series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
+data: [{
+x: "Laptops",
+y: [10],
+tooltip: "this is tooltip"
+}, {
+x: "Desktops",
+y: [50]
+}, {
+x: "Mobiles",
+y: [30]
+}]
+};
+} 
+ 
+
+
+	$scope.chartType = 'pie';
 
 	$scope.config1 = {
 		labels: false,
